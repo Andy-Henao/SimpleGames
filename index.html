@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Games</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game" aria-label="Simple games collection">
+    <h1>Simple Games!</h1>
+
+    <nav class="game-switcher" aria-label="Game selector">
+      <button id="switch-ttt" class="switch-btn active" type="button" aria-pressed="true">Tic-Tac-Toe</button>
+      <button id="switch-flappy" class="switch-btn" type="button" aria-pressed="false">Flappy Bird</button>
+    </nav>
+
+    <section id="ttt-game" class="game-panel">
+      <div class="ttt-options" aria-label="Tic-Tac-Toe options">
+        <div class="option-row">
+          <label for="ttt-mode">Mode</label>
+          <select id="ttt-mode">
+            <option value="human" selected>2 Players</option>
+            <option value="bot">Vs Bot</option>
+          </select>
+        </div>
+
+        <div class="option-row" id="difficulty-row">
+          <label for="ttt-difficulty">Bot Level</label>
+          <select id="ttt-difficulty">
+            <option value="easy" selected>Easy</option>
+            <option value="medium">Medium</option>
+          </select>
+        </div>
+      </div>
+
+      <p id="status" class="status" aria-live="polite">Player X's turn</p>
+
+      <section class="board" role="grid" aria-label="Tic-Tac-Toe board">
+        <button class="cell" data-index="0" aria-label="Cell 1"></button>
+        <button class="cell" data-index="1" aria-label="Cell 2"></button>
+        <button class="cell" data-index="2" aria-label="Cell 3"></button>
+        <button class="cell" data-index="3" aria-label="Cell 4"></button>
+        <button class="cell" data-index="4" aria-label="Cell 5"></button>
+        <button class="cell" data-index="5" aria-label="Cell 6"></button>
+        <button class="cell" data-index="6" aria-label="Cell 7"></button>
+        <button class="cell" data-index="7" aria-label="Cell 8"></button>
+        <button class="cell" data-index="8" aria-label="Cell 9"></button>
+        <div id="win-line" class="win-line" aria-hidden="true"></div>
+      </section>
+
+      <button id="restart" class="restart" type="button">Restart Game</button>
+    </section>
+
+    <section id="flappy-game" class="game-panel hidden" aria-hidden="true">
+      <p id="flappy-status" class="status" aria-live="polite">Click Start in the middle, then hit Space to flap</p>
+      <p id="flappy-score" class="score">Score: 0</p>
+      <p id="flappy-high-score" class="score high-score">High Score: 0</p>
+
+      <div class="flappy-stage">
+        <canvas id="flappy-canvas" class="flappy-canvas" width="360" height="560" aria-label="Flappy Bird game area"></canvas>
+        <button id="flappy-start" class="restart flappy-start-overlay" type="button">Start Flappy Bird</button>
+      </div>
+
+      <div class="flappy-actions">
+        <button id="flappy-reset" class="restart secondary" type="button">Reset Flappy Bird</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
