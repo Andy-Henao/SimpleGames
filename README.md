@@ -29,6 +29,5 @@ A small vanilla web project with multiple playable mini-games on a single page.
 - `styles.css` - All styles.
 - `script.js` - Game logic and interactions.
 
-## Notes
 
-- This repository is intended to keep clean, reversible versions through Git commits.
+
